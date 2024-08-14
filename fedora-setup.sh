@@ -28,6 +28,8 @@ function append_if_not_exists {
 # Set environment variables in .bashrc
 append_if_not_exists ~/.bashrc 'export EDITOR="nvim"'
 append_if_not_exists ~/.bashrc 'export VISUAL="nvim"'
+echo "alias vi=nvim" >> ~/.bashrc
+echo "alias vim=nvim" >> ~/.bashrc
 # Create symlinks for vi and vim to point to nvim
 echo "Creating symlinks for vi and vim to point to Neovim..."
 sudo ln -sf /usr/bin/nvim /usr/bin/vim
@@ -127,6 +129,9 @@ sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/yum.repos.d/vscode.repo > /dev/null
 sudo dnf install code -y --best --allowerasing
 
+# Install Bat
+sudo dnf install bat -y
+echo "alias cat=bat" >> ~/.bashrc
 
 echo "===================================="
   
