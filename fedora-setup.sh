@@ -131,7 +131,8 @@ sudo dnf install code -y --best --allowerasing
 
 # Install Bat
 sudo dnf install bat -y
-echo "alias cat=bat" >> ~/.bashrc
+echo "alias cat='bat -P'" >> ~/.bashrc
+source ~/.bashrc
 
 echo "===================================="
   
